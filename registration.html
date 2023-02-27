@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Đăng ký | Easy Quiz. Website thi trắc nghiệm - Tạo và chia sẻ các bài kiểm tra trực tuyến</title>
+   <link rel="icon" href="./assets/images/logo/616547.ico" type="image/x-icon" />
+   <link href="./Account/Registration Form/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet"
+      media="all">
+   <link href="./Account/Registration Form/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet"
+      media="all">
+   <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+      integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"
+      integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- Vendor CSS-->
+   <link href="./Account/Registration Form/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+   <link href="./Account/Registration Form/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+   <!-- Main CSS-->
+   <link href="./Account/Registration Form/css/main.css" rel="stylesheet" media="all">
+   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+   <div class="page-wrapper font-poppins">
+      <div class="wrapper wrapper--w680">
+         <div class="card card-4">
+            <div class="card-body">
+               <h2 class="title">Đăng ký</h2>
+               <form method="POST" ng-submit="submitForm()" name="ValidRegistration">
+                  <div class="row row-space">
+                     <div class="col-2">
+                        <div class="input-group">
+                           <label class="label">Tên</label>
+                           <input class="input--style-4" type="text" name="first_name" ng-model="firstName" required>
+                           <span class="note-validate"
+                              ng-show="ValidRegistration.first_name.$invalid && ValidRegistration.first_name.$dirty">Không
+                              được để trống tên</span>
+                        </div>
+                     </div>
+                     <div class="col-2">
+                        <div class="input-group">
+                           <label class="label">Họ</label>
+                           <input class="input--style-4" type="text" name="last_name" ng-model="lastName" required>
+                           <span class="note-validate"
+                              ng-show="ValidRegistration.last_name.$invalid && ValidRegistration.last_name.$dirty">Không
+                              được để trống họ</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row row-space">
+                     <div class="col-2">
+                        <div class="input-group">
+                           <label class="label">Ngày sinh</label>
+                           <div class="input-group-icon">
+                              <input class="input--style-4 js-datepicker" type="text" name="birthday"
+                                 ng-model="birthday" name="birthday" required>
+                              <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                           </div>
+                           <span class="note-validate"
+                              ng-show="ValidRegistration.birthday.$invalid && ValidRegistration.birthday.$dirty">Chọn
+                              ngày sinh</span>
+                        </div>
+                     </div>
+                     <div class="col-2">
+                        <div class="input-group">
+                           <label class="label">Giới tính</label>
+                           <div class="p-t-10">
+                              <label class="radio-container m-r-45">Nam
+                                 <input type="radio" checked="checked" name="gender">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="radio-container">Nữ
+                                 <input type="radio" name="gender">
+                                 <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row row-space">
+                     <div class="" style="min-width: 100%;">
+                        <div class="input-group">
+                           <label class="label">Email</label>
+                           <input class="input--style-4" type="email" name="email" ng-model="emailInput" required>
+                           <span class="note-validate"
+                              ng-show="ValidRegistration.email.$invalid && ValidRegistration.email.$dirty">Vui
+                              lòng nhập email</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row row-space">
+                     <div class="" style="min-width: 100%;">
+                        <div class="input-group field-password">
+                           <label class="label">Mật khẩu</label>
+                           <input class="input--style-4 input-password" type="password" class="password"
+                              ng-model="password" name="password" required>
+                           <i class='bx bx-hide eye-icon'></i>
+                           <span class="note-validate"
+                              ng-show="ValidRegistration.password.$invalid && ValidRegistration.password.$dirty">Hãy nhập
+                              mật khẩu</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row row-space">
+                     <div class="" style="min-width: 100%;">
+                        <div class="input-group field-password">
+                           <label class="label">Nhập lại mật khẩu</label>
+                           <input class="input--style-4 input-password" type="password" class="password"
+                              ng-model="confirmPassword" name="confirmPassword" match-password="password"
+                              ng-required="true">
+                           <i class='bx bx-hide eye-icon'></i>
+                           <span class="note-validate"
+                              ng-show="ValidRegistration.confirmPassword.$error.passwordMatch">Mật
+                              khẩu không đúng</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="input-group">
+                     <label class="label">Subject</label>
+                     <div class="rs-select2 js-select-simple select--no-search">
+                        <select name="subject" ng-model="subject">
+                           <option disabled="disabled" selected="selected">Choose option</option>
+                           <option value="subject 1">Subject 1</option>
+                           <option value="subject 2">Subject 2</option>
+                           <option value="subject 3">Subject 3</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                     </div>
+                  </div>
+                  <div class="p-t-15 text-center">
+                     <button class="btn btn--radius-2 btn--blue btn-submit w-100" type="submit"
+                        ng-click="clickRegistraion()">Đăng ký</button>
+                  </div>
+               </form>
+               <div class="form-link">
+                  <span>Bạn đã có tài khoản rồi à? <a href="./login.html" class="link login-link">Đăng nhập</a></span>
+               </div>
+               <div class="form-link">
+                  <span><a href="./index.html" class="link login-link">Quay lại EasyQuiz</a></span>
+               </div>
+               <div class="line"></div>
+               <div class="media-options">
+                  <a href="#" class="field facebook">
+                     <i class='bx bxl-facebook facebook-icon'></i>
+                     <span>Đăng ký bằng Facebook</span>
+                  </a>
+               </div>
+               <div class="media-options">
+                  <a href="#" class="field google">
+                     <img src="./Account/Registration Form/google.png" alt="" class="google-img">
+                     <span>Đăng ký bằng Google</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Jquery JS-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- Vendor JS-->
+   <script src="./Account/Registration Form/vendor/select2/select2.min.js"></script>
+   <script src="./Account/Registration Form/vendor/datepicker/moment.min.js"></script>
+   <script src="./Account/Registration Form/vendor/datepicker/daterangepicker.js"></script>
+   <!-- Main JS-->
+   <script src="./Account/Registration Form/js/global.js"></script>
+   <script src="./Account/Registration Form/js/script.js"></script>
+</body>
+</html>

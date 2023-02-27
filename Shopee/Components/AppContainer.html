@@ -1,0 +1,163 @@
+<div class="app__container app_content">
+    <div class="grid wide">
+        <div class="grid__row">
+            <div class="grid__column-2 hideOnTableAndMobile">
+                <nav class="category">
+                    <h3 class="category__heading">
+                        <i class="category__heading-icon fa-solid fa-list"></i>
+                        Danh mục
+                    </h3>
+
+                    <ul class="category-list">
+                        <li class="category-item category-item--active">
+                            <a href="#" class="category-item__link">Sản phẩm</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">New 2022</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">SALE SALE</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">HÀNG MỚI 2022</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">Heart 💜</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">Áo Thun Hot</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">ALL IN 3</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">ALL IN 2</a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link">ALL IN 1</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="grid__column-10 product">
+                <div class="home-filter hideOnTableAndMobile">
+                    <span class="home-filter__label">Sắp xếp theo</span>
+                    <button class="home-filter_btn btn btn-primary">Phổ biến</button>
+                    <button class="home-filter_btn btn">Mới nhất</button>
+                    <button class="home-filter_btn btn">Bán chạy</button>
+
+                    <div class="select-input">
+                        <span class="select-input__label">Giá</span>
+                        <i class="select-input-icon fa-solid fa-angle-down"></i>
+                        <ul class="select-input__list">
+                            <li class="select-input__item">
+                                <a href="#" class="select-input__link">Giá: Thấp đến cao</a>
+                            </li>
+                            <li class="select-input__item">
+                                <a href="#" class="select-input__link">Giá: Cao đến thấp</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="home-filter__page">
+                        <span class="home-filter__page-num">
+                            <span class="home-filter__page-current">1</span>/14
+                        </span>
+
+                        <div class="home-filter__page-control shadow-slight">
+                            <a href="#" class="home-filter__page-btn home-filter__page-btn-disable">
+                                <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                            </a>
+                            <a href="#" class="home-filter__page-btn">
+                                <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="mobile-category">
+                    <ul class="mobile-category__list">
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                        <li class="mobile-category__item">
+                            <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="home-product">
+                    <!-- Grid -> Row -> Column -->
+                    <div class="grid__row">
+                        <!-- Product item -->
+                        <div class="grid__column-2-4 l-2-4 m-3 c-4 c-s-6" ng-repeat="product in sanpham">
+                            <a class="home-product-item" href="#">
+                                <div class="home-product-item__img"
+                                    ng-style="{'background-image': 'url({{product.image}})', 'background-repeat': 'no-repeat'}">
+                                </div>
+                                <h4 class="home-product-item-name">{{product.name}}</h4>
+                                <div class="home-product-item__price">
+                                    <span
+                                        class="home-product-item__price-old">{{formatNumber(product.priceOld)}}đ</span>
+                                    <span class="home-product-item__price-current">{{formatNumber(product.priceOld *
+                                        (100 - product.SaleOff)/100)}}đ</span>
+                                </div>
+                                <div class="home-product-item__action">
+                                    <span class="home-product-item__like home-product-item__like-liked">
+                                        <i class="home-product-item__like-icon-empty far fa-heart"></i>
+                                        <i class="home-product-item__like-icon-fill fas fa-heart"></i>
+                                    </span>
+                                    <div class="home-product-item__rating">
+                                        <i class="home-product-item__rating-star--gold fas fa-star"></i>
+                                        <i class="home-product-item__rating-star--gold fas fa-star"></i>
+                                        <i class="home-product-item__rating-star--gold fas fa-star"></i>
+                                        <i class="home-product-item__rating-star--gold fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="home-product-item__sold">Đã bán {{formatAmount(product.AmountSales)}}</span>
+                                </div>
+                                <div class="home-product-item__origin">
+                                    <span class="home-product-item__brand">{{product.Brand}}</span>
+                                    <span class="home-product-item__origin-name">{{product.Country}}</span>
+                                </div>
+                                <div class="home-product-item__favourite">
+                                    <i class="fas fa-check"></i>
+                                    <span>Yêu thích</span>
+                                </div>
+                                <div class="home-product-item__sale-off">
+                                    <span class="home-product-item__sale-off__persent">{{product.SaleOff}}%</span>
+                                    <span class="home-product-item__sale-label">GIẢM</span>
+                                </div>
+                                <div class="home-product-item__add-product" ng-click="AddCart(product)">Thêm vào giỏ hàng</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

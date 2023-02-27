@@ -1,0 +1,61 @@
+<h1 class="setting-title">Public profile</h1>
+<div class="line"></div>
+<div class="col-12 avatar-user avatar-user-mobile">
+    <div class="avatar">
+        <label for="" class="label-input">Profile picture</label>
+        <a href="#">
+            <img class="avatar avatar-image" src="./Your Profile/images/51308867678_c776b32a2e_o-min.jpg" alt="">
+        </a>
+        <div class="avatar-edit"><i class="fa-solid fa-pen"></i>Edit</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <div class="field-item">
+            <label for="fullname" class="label-input">Fullname</label>
+            <input type="text" value="Ngô Mạnh Hùng" id="fullname">
+            <p class="note">Your name may appear around GitHub where you contribute or are mentioned. You
+                can remove it at any time.</p>
+        </div>
+        <div class="field-item">
+            <label for="email" class="label-input">Public email</label>
+            <input type="text" id="email" value="hhungnm@gmail.com">
+            <p class="note">You have set your email address to private. To toggle email privacy, go to <a href="#"
+                    class="link-color">email settings</a> and uncheck "Keep my email address
+                private."
+            </p>
+        </div>
+        <div class="field-item">
+            <label for="birthday" class="label-input">Birthday</label>
+            <input type="date" id="birthday">
+        </div>
+        <div class="field-item">
+            <label for="bio" class="label-input">Bio</label>
+            <textarea id="bio"></textarea>
+        </div>
+        <div class="note">All of the fields on this page are optional and can be deleted at any time, and
+            by filling them out, you're giving us consent to share this data wherever your user profile
+            appears. Please see our <a href="#" class="link-color">privacy statement</a> to learn more about
+            how we use this information.</div>
+        <button class="button-setting btn-success">Update profile</button>
+    </div>
+    <div class="col-12 col-md-4 avatar-user">
+        <div class="avatar">
+            <label for="" class="label-input">Profile picture</label>
+            <a href="#">
+                <img class="avatar-image" src="./Your Profile/images/51308867678_c776b32a2e_o-min.jpg" alt="">
+            </a>
+            <div class="avatar-edit"><i class="fa-solid fa-pen"></i>Edit</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var textarea = document.querySelector("textarea");
+    textarea.addEventListener("keyup", e => {
+        textarea.style.height = "150px";
+        let scHeight = e.target.scrollHeight;
+        console.log(scHeight)
+        textarea.style.height = `${scHeight}px`;
+    });
+</script>

@@ -1,0 +1,72 @@
+<nav class="nav">
+    <div class="d-flex align-items-center h-100">
+        <i class="fa-solid fa-bars navOpenBtn me-4"></i> <a href="#!easyquiz" class="logo">EasyQuiz</a>
+        <ul class="nav-home">
+            <a href="./monhoc.html" class="logo logo-mobile">EasyQuiz</a> <i class="fa-solid fa-xmark navCloseBtn"></i>
+            <li class="nav-item h-100 nav-item-home"><a href="#!home" class="nav-links">Trang chủ</a></li>
+            <li class="nav-item h-100 chude"><a href="#" class="nav-links">Chủ đề
+                    <i class="fa-sharp fa-solid fa-chevron-down ms-2 fs-5"></i></a>
+                <ul class="category list-group list-group-flush z-3">
+                    <a href="#!tracnghiem/{{s.Id}}/{{s.Name}}"
+                        class="list-group-item list-group-item-action"
+                        ng-repeat="s in subject | orderBy: 'Name'">{{s.Name}}
+                    </a>
+                </ul>
+            </li>
+            <li class="nav-item h-100"><a href="#" class="nav-links">Lời giải chuyên gia</a></li>
+            <li class="nav-item h-100 nav-item-create"><a href="#" class="nav-links nav-item-create-link">Tạo <i
+                        class="fa-sharp fa-solid fa-chevron-down ms-3 fs-4"></i></a></li>
+        </ul>
+    </div>
+    <div class="d-flex align-items-center h-100">
+        <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>
+        <div class="search-box"> <i class="fa-solid fa-magnifying-glass search-icon"></i> <input type="text"
+                placeholder="Học phần, sách, tác giả..." /> </div>
+        <ul class="nav-item dropdown navbar-nav">
+            <a class="nav-link dropdown-toggle d-flex align-items-center p-3" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-plus me-2 fs-3"></i><i
+                    class="fa-solid fa-caret-down fs-5"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item dropdown-hover" href="#">New reponsitory</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Import repository</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">New codespace</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">New gist</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">New organization</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">New project</a></li>
+            </ul>
+        </ul>
+        <ul class="nav-item dropdown navbar-nav navbar__user">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="navbar__user-image me-2" src="./Subject/images/51308867678_c776b32a2e_o-min.jpg" alt=""><i
+                    class="fa-solid fa-caret-down fs-4"></i>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Signed in as <br><span class="fw-semibold">RokeyHung</span></a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item dropdown-hover" href="profile.html">Your profile</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Your repositories</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Your projects</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Your stars</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Your gists</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Your sponsors</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Upgrade</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Try Enterprise</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Feature preview</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Help</a></li>
+                <li><a class="dropdown-item dropdown-hover" href="#">Settings</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item dropdown-hover" href="index.html">Sign out</a></li>
+            </ul>
+        </ul>
+    </div>
+</nav>

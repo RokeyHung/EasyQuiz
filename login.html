@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập | Easy Quiz. Website thi trắc nghiệm - Tạo và chia sẻ các bài kiểm tra trực tuyến</title>
+    <link rel="icon" href="./assets/images/logo/616547.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./Account/Login Form/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="checkLogin">
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header>Đăng nhập</header>
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" value="hhungnm@gmail.com" ng-model="usernameInput"
+                            placeholder="Nhập email hoặc tên người dùng của bạn" class="input">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Nhập mật khẩu" value="123456" class="password"
+                            ng-model="passwordInput">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Quên mật khẩu?</a>
+                    </div>
+                    <div class="field button-field">
+                        <button type="submit" ng-click="login();">Đăng nhập</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Mới sử dụng EasyQuiz? <a href="./registration.html" class="link signup-link">Đăng
+                            ký</a></span>
+                </div>
+                <div class="form-link">
+                    <span><a href="./index.html" class="link signup-link">Quay lại EasyQuiz</a></span>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Tiếp tục với Facebook</span>
+                </a>
+            </div>
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="./Account/Login Form/google.png" alt="" class="google-img">
+                    <span>Tiếp tục với Google</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./Account/Login Form/script.js"></script>
+<script src="./Subject/db/Students.js"></script>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("checkLogin", function ($scope) {
+        $scope.login = function () {
+            for (var i = 0; i < listSV.length; i++) {
+                var motsv = listSV[i];
+                if ($scope.usernameInput == motsv.username && $scope.passwordInput == motsv.password) {
+                    window.location.href = "trang-chu.html";
+                    alert('Đăng nhập thành công!')
+                    break;
+                }
+                else {
+                    alert('Đăng nhập thất bại!');
+                }
+            }
+        }
+    });
+</script>
+
+</html>
